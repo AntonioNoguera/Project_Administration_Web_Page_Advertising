@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -26,30 +25,34 @@
 			height: 50px;
 		}
 
-		#navbar {
-			background: linear-gradient(to right, #FFCB6C, #019EE3);
+		#navbar { 
 			margin-inline-start: 1%;
-			color: red;
+			margin-inline-end: 1%;  
+			animation: cambiar 1s ease-in-out infinite;
 		}
 
-		body {
-			background: #7f7fd5;
-			/* fallback for old browsers */
-			background: -webkit-linear-gradient(to right, #FFCB6C, #86a8e7, #019EE3);
+		body { 
 			/* Chrome 10-25, Safari 5.1-6 */
-			background: linear-gradient(to right, #FFCB6C, #019EE3);
+			background: linear-gradient(to right, #FFCB6C, #019EE3); 
+			background-size: 200% 200%;
+			animation: cambiar 10s ease-in infinite;
+		}
+
+		@keyframes cambiar{
+			0%{background-position: 0 50%;}
+			50%{background-position: 100% 50%;}
+			100%{background-position: 0 50%;}
 		}
 	</style>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
 		<div class="container-fluid" id="navbar">
 			<a class="navbar-brand" href="#">
 				<img id="headerImg" src="media/loghggo.png" class="img-fluid">
 				Comedores Industriales del Pacífico
 			</a>
-
 
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
 				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,35 +64,121 @@
 				<div class="navbar-nav ms-auto">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">¿Quienes Somos?</a>
+							<a class="nav-link active" aria-current="page" href="#">¿Quiénes Somos?</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
+							<a class="nav-link" href="#">¿Qué nos hace distintos?</a>
 						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-								aria-expanded="false">
-								Dropdown
-							</a>
-							<ul class="dropdown-menu">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
-							</ul>
-						</li>
+
 						<li class="nav-item">
-							<a class="nav-link disabled">Disabled</a>
+							<a class="nav-link" href="#">Beneficios de un servicio de comedor</a>
 						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contrataciones</a>
+						</li>
+
 					</ul>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<div class="container" style="background-color: aquamarine;">
-
+	<div class="container m-10">
+		<div class="row">
+			<div class="col-12 bg-white">
+			&nbsp;<br>&nbsp;<br>&nbsp;<br>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-12 bg-white">
+				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
