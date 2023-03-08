@@ -42,7 +42,19 @@
 			0%{background-position: 0 50%;}
 			50%{background-position: 100% 50%;}
 			100%{background-position: 0 50%;}
+		}	
+
+		.is-visible{
+		    opacity:1!important; 
+
 		}
+
+		.scrolleable{
+			opacity:.5; 
+			transition:opacity 3s;
+			will-change: transform, opacity; 
+		}
+
 	</style>
 </head>
 
@@ -90,7 +102,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="scrolleable container my-3">
+		<div class="row">
+			<div class="col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white">
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
+					harum quia incidunt optio!</h1>
+			</div>
+		</div>
+	</div>
+	<div class="container my-3 scrolleable ">
 		<div class="row">
 			<div class="col-12 bg-white">
 				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
@@ -99,86 +120,103 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
+	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
+				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
 					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
 					harum quia incidunt optio!</h1>
 			</div>
 		</div>
 	</div>
-	<div class="container my-3">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
+
+
+	
+	
 </body>
+
+<script>
+console.log("Ya llego tilin");
+	var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
+	 
+	var elementsToShow = document.querySelectorAll('.scrolleable');
+
+    function loop() {
+		elementsToShow.forEach(function (element) {
+			if (isElementInViewport(element)) {
+				element.classList.add('is-visible'); 
+			} else {
+      			element.classList.remove('is-visible');
+    		}
+		});
+
+	scroll(loop);
+	}
+
+	loop();
+
+	function isElementInViewport(el) {
+		// special bonus for those using jQuery
+		if (typeof jQuery === "function" && el instanceof jQuery) {
+			el = el[0];
+		}
+		var rect = el.getBoundingClientRect();
+		return (
+		(rect.top <= 0 && rect.bottom >= 0)
+		||
+		(rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+			rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+		||
+		(rect.top >= 0 &&
+			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+		);
+	}
+
+</script>
+
 </html>
