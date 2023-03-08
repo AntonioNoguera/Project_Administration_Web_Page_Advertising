@@ -134,6 +134,11 @@
 			margin: 0;
 			padding: 0;
 		}
+
+		.contenido{
+			border-radius: 10px;
+			padding: 10px 20px 10px 20px;
+		}
 	</style>
 </head>
 
@@ -164,19 +169,20 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<div class="navbar-nav ms-auto">
 					<ul class="navbar-nav text-center mb-2 mb-lg-0">
+
 						<li class="nav-item">
-							<a class="nav-link active enlace" aria-current="page" href="#">¿Quiénes Somos?</a>
+							<a class="nav-link enlace" aria-current="page" href="#pseudoTarget">¿Quiénes Somos?</a>
 						</li>
 						<li class="nav-item ">
-							<a class="nav-link enlace" href="#">¿Qué nos hace distintos?</a>
+							<a class="nav-link enlace" href="#quienes">¿Qué nos hace distintos?</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link enlace" href="#">Beneficios de un servicio de comedor</a>
+							<a class="nav-link enlace" href="#distintos">Beneficios de un servicio de comedor</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link enlace" href="#">Contrataciones</a>
+							<a class="nav-link enlace" href="#beneficios">Contrataciones</a>
 						</li>
 
 					</ul>
@@ -185,7 +191,7 @@
 		</div>
 	</nav>
 
-	<div class="container topSpace">
+	<div class="container topSpace" id="pseudoTarget">
 		<div class="row">
 			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white">
 				&nbsp;
@@ -212,7 +218,7 @@
 
 	<div class="scrolleable container my-3">
 		<div class="row">
-			<div class="col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white">
+			<div class="contenido col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white" id="quienes">
 				<h1>¿Quiénes Somos?</h1>
 				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus iusto, nulla quod consequatur
 				pariatur vero cum non quaerat at sapiente voluptatem vitae quo unde adipisci quas, excepturi, tempora a
@@ -238,7 +244,7 @@
 	</div>
 	<div class="container my-3 scrolleable ">
 		<div class="row">
-			<div class="col-12 bg-white">
+			<div class="contenido col-12 bg-white" id="distintos">
 				<h1>¿Qué nos hace distintos?</h1>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorem assumenda rerum magnam. Beatae
 				quod laudantium harum eum veniam asperiores aliquam illum minima. Beatae, a. Fuga et rem eos optio.
@@ -262,7 +268,7 @@
 	</div>
 	<div class="container my-3 scrolleable">
 		<div class="row">
-			<div class="col-12 bg-white">
+			<div class="contenido col-12 bg-white" id="beneficios">
 				<h1>Beneficios del servicio de comedor</h1>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum obcaecati ad veniam earum, ex iste
 				saepe magni, nisi error deserunt voluptates! Voluptatum, optio eligendi! Possimus et placeat animi
@@ -298,7 +304,7 @@
 	</div>
 	<div class="container my-3 scrolleable">
 		<div class="row">
-			<div class="col-12 bg-white">
+			<div class="contenido col-12 bg-white" id="Contrataciones">
 				<h1>Contrataciones</h1>
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id cum ea incidunt tenetur quasi maiores
 				explicabo enim qui facilis! Libero deleniti alias incidunt commodi minus laborum molestiae, debitis
@@ -361,9 +367,6 @@
 							1.966,3.539,4.522V22z" />
 					</svg>
 				</a>
-
-
-
 			</section>
 
 		</div>
