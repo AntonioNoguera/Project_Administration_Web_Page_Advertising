@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -25,61 +26,70 @@
 			height: 50px;
 		}
 
-		body { 
+		body {
 			/* Chrome 10-25, Safari 5.1-6 */
-			background: linear-gradient(to right, #FFCB6C, #019EE3); 
+			background: linear-gradient(to right, #FFCB6C, #019EE3);
 			background-size: 200% 200%;
 			animation: cambiar 10s ease-in infinite;
 		}
 
-		@keyframes cambiar{
-			0%{background-position: 0 50%;}
-			50%{background-position: 100% 50%;}
-			100%{background-position: 0 50%;}
-		}	
+		@keyframes cambiar {
+			0% {
+				background-position: 0 50%;
+			}
 
-		.is-visible{
-		    opacity:1!important;  
-			transform: translateY(0)!important;
+			50% {
+				background-position: 100% 50%;
+			}
+
+			100% {
+				background-position: 0 50%;
+			}
 		}
 
-		.scrolleable{
+		.is-visible {
+			opacity: 1 !important;
+			transform: translateY(0) !important;
+		}
+
+		.scrolleable {
 			transform: translateY(3ch);
-			opacity:.1; 
-			transition:opacity .5s, transform .5s;
-			will-change: transform, opacity; 
+			opacity: .1;
+			transition: opacity .5s, transform .5s;
+			will-change: transform, opacity;
 		}
 
-		.enlace{ 
+		.enlace {
 			display: inline-block;
-            position: relative;
+			position: relative;
 		}
 
 		.enlace::before,
 		.enlace::after {
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 2px;
-		bottom: 0;
-		background-color: #70b3d4;
-		transition: width 0.2s ease-in-out;
+			content: '';
+			position: absolute;
+			width: 0;
+			height: 2px;
+			bottom: 0;
+			background-color: #70b3d4;
+			transition: width 0.2s ease-in-out;
 		}
 
 		.enlace::before {
-		left: 50%;
-		transform: translateX(-50%);
+			left: 50%;
+			transform: translateX(-50%);
 		}
 
 		.enlace::after {
-		right: 50%;
-		transform: translateX(50%);
+			right: 50%;
+			transform: translateX(50%);
 		}
 
 		.enlace:hover::before,
 		.enlace:hover::after {
-		width: 100%;
+			width: 100%;
 		}
+
 		.navbar-toggler:focus {
 			text-decoration: none;
 			outline: 0;
@@ -88,23 +98,51 @@
 
 		.navbar-toggler:hover {
 			text-decoration: none;
-			outline: 0; 
+			outline: 0;
 			box-shadow: 0px 0px 0px 2px lightgray;
-		} 
+		}
 
-		.topSpace{
+		.topSpace {
 			opacity: 0;
 		}
 
+		svg{
+			height: 30px;
+			width: 30px; 
+			margin: 0;
+			margin-left: -14.5px;
+			margin-top:4px ;
+			padding:0;  
+			position:absolute;
+			fill:gray;   
+			transition: opacity .2s; 
+		}
+
+		svg:hover{ 
+			transition: opacity .2s; 
+			fill: white;
+		}
+
+		.btn{
+			height: 40px;
+			width: 40px; 
+			margin: 0;
+			padding: 0;
+			border-radius: 100px;
+		} 
+		.svv{
+			margin: 0;
+			padding: 0;
+		}
 	</style>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top " >
-		<div class="container-fluid d-flex justify-content-center" id="navbar"> 
+	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
+		<div class="container-fluid d-flex justify-content-center" id="navbar">
 			<div class="row">
 
-			
+
 				<a class="navbar-brand " href="#">
 					<div class="row">
 						<div class="col-sm-12 col-xs-12 col-md-2 col-lg-2">
@@ -114,13 +152,13 @@
 							Comedores Industriales del Pacífico
 						</div>
 					</div>
-			</a>
+				</a>
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button> 
+				</button>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -146,6 +184,7 @@
 			</div>
 		</div>
 	</nav>
+
 	<div class="container topSpace">
 		<div class="row">
 			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white">
@@ -170,100 +209,191 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="scrolleable container my-3">
 		<div class="row">
 			<div class="col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
+				<h1>¿Quiénes Somos?</h1>
+				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus iusto, nulla quod consequatur
+				pariatur vero cum non quaerat at sapiente voluptatem vitae quo unde adipisci quas, excepturi, tempora a
+				quibusdam?
+				Aperiam tempora quaerat a, laborum perspiciatis, minus recusandae ullam alias magni nihil eaque! Harum
+				inventore tenetur recusandae voluptatum est accusantium reprehenderit maiores exercitationem. Quisquam
+				accusantium nostrum a aspernatur, in rem.
+				Neque facilis explicabo enim sit consectetur ratione dolores quaerat expedita optio, quisquam ipsam
+				temporibus iusto ut natus quibusdam eaque sequi at repudiandae perferendis soluta officia distinctio
+				recusandae cupiditate. Doloribus, temporibus?
+				Veniam autem aut illum libero, ut fugit optio explicabo ratione nihil reprehenderit eligendi. Pariatur
+				vero natus eaque, voluptatibus repudiandae ratione ipsum error maiores nesciunt necessitatibus voluptas
+				praesentium molestias officia amet.
+				Voluptate quam rem labore saepe maxime, est perferendis sapiente. Esse voluptates inventore nostrum,
+				distinctio cupiditate non numquam asperiores adipisci officiis corporis nisi! Eos ullam rem excepturi
+				accusamus consequatur enim quas!
+				Rerum corporis unde consequatur doloribus. Unde, sint illum quisquam velit eos obcaecati, maxime maiores
+				perferendis excepturi distinctio aliquam aliquid esse ut fugit aperiam amet accusamus. Totam repellat
+				quo magnam quia!
+
 			</div>
 		</div>
 	</div>
 	<div class="container my-3 scrolleable ">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
+				<h1>¿Qué nos hace distintos?</h1>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorem assumenda rerum magnam. Beatae
+				quod laudantium harum eum veniam asperiores aliquam illum minima. Beatae, a. Fuga et rem eos optio.
+				Accusamus placeat excepturi et provident optio sint repellendus, porro id nam assumenda iusto fuga
+				voluptatem incidunt. Voluptas quae quasi aperiam. Cumque optio illo ut perspiciatis expedita nulla totam
+				perferendis? Necessitatibus.
+				Commodi dicta minus ipsum perferendis nesciunt eos est in iure qui eum inventore corrupti ad, neque
+				pariatur quis doloribus ab necessitatibus. Aliquid, facilis amet sint consequatur doloremque praesentium
+				nobis adipisci.
+				Numquam corrupti quia sapiente labore dolores unde repudiandae esse totam sequi molestiae possimus ex,
+				doloribus, suscipit beatae error natus rerum amet eligendi aperiam sint nesciunt odit! Possimus magni
+				repudiandae quis.
+				In, qui itaque reprehenderit magni a quam provident dolore accusantium, sunt pariatur possimus esse
+				laboriosam ab, illo fuga minima quod perferendis amet perspiciatis cupiditate natus. Sapiente alias in
+				unde reprehenderit.
+				Dignissimos magnam repudiandae totam dolore vero, exercitationem iure autem voluptatem est recusandae
+				maxime eligendi! Necessitatibus velit rerum esse praesentium! Accusantium commodi, unde repudiandae
+				voluptatum consequatur aperiam placeat cum animi ex?
 			</div>
 		</div>
 	</div>
 	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
+				<h1>Beneficios del servicio de comedor</h1>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum obcaecati ad veniam earum, ex iste
+				saepe magni, nisi error deserunt voluptates! Voluptatum, optio eligendi! Possimus et placeat animi
+				commodi ipsa?
+				Odio ipsa facilis expedita aspernatur non iste officia at accusamus fugit tempora laboriosam optio
+				inventore consectetur dolore aliquam atque praesentium quam magni eaque, quod, dolorum adipisci nobis.
+				Ipsam, itaque nesciunt.
+				Iusto magni commodi animi consequuntur voluptate fugit non officiis cupiditate nostrum error quae
+				doloremque in quaerat molestiae, repellendus minus alias velit iste, dignissimos id, neque culpa.
+				Dignissimos quis asperiores reiciendis!
+				Eaque dolor perferendis omnis possimus quas, quod enim deleniti deserunt porro optio nisi blanditiis
+				nesciunt inventore a dolores sed fuga debitis eum veritatis minus eveniet ullam? Eum in optio inventore?
+				Nulla inventore sit obcaecati, delectus eius, aliquid deleniti aperiam similique, exercitationem dolorem
+				facere quis! Corrupti quia consequatur deserunt. Sunt temporibus fugit officia tempora et repudiandae
+				officiis aliquid architecto reprehenderit alias?
+				Fuga aliquam nesciunt doloremque quo necessitatibus rerum consequuntur qui nam dolorem quas ipsam
+				quaerat, deserunt earum repellendus obcaecati ad, voluptas natus dolore fugit nostrum magnam
+				consequatur? Culpa neque dolor expedita!
+				Iusto, commodi neque, praesentium itaque tenetur consequuntur sapiente voluptatibus fuga minus, corporis
+				dicta facilis repellat dolorem! Earum possimus incidunt maiores sunt, autem eos voluptate, veniam
+				doloribus consequatur nesciunt beatae. Enim.
+				Porro corporis aliquam hic culpa modi perferendis neque quasi. Accusamus nostrum deserunt dolores
+				consectetur autem repellat consequuntur sed a quo accusantium, sequi repellendus dolorum tempore
+				inventore fugit hic optio dolor!
+				Animi, perspiciatis, corrupti iste at porro natus rem sit corporis non, qui molestias numquam voluptates
+				voluptatem. Sit ullam, illo, recusandae similique, laborum commodi debitis itaque consequatur unde
+				consectetur explicabo praesentium!
+				Quaerat autem natus ipsum aliquid? Facere voluptate, illo officiis adipisci ipsa cum saepe inventore
+				itaque voluptates ab eligendi dicta recusandae, nisi, fugit est perferendis id. Recusandae itaque
+				consectetur eligendi quia!
 			</div>
 		</div>
 	</div>
 	<div class="container my-3 scrolleable">
 		<div class="row">
 			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3 scrolleable">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3 scrolleable">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3 scrolleable">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
-			</div>
-		</div>
-	</div>
-	<div class="container my-3 scrolleable">
-		<div class="row">
-			<div class="col-12 bg-white">
-				<h1>Loream ipsum dolor sit amet consectetur adipisicing elit. Voluptate ratione veritatis id cumque
-					libero distinctio qui minus corrupti voluptates fugiat deleniti quos maiores eum veniam, accusamus
-					harum quia incidunt optio!</h1>
+				<h1>Contrataciones</h1>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id cum ea incidunt tenetur quasi maiores
+				explicabo enim qui facilis! Libero deleniti alias incidunt commodi minus laborum molestiae, debitis
+				rerum. Sed!
+				Cumque, quod velit! Voluptates libero necessitatibus, eveniet iste ipsum numquam recusandae, id totam
+				vero harum quisquam. Maxime eligendi accusantium laudantium atque, nemo cum distinctio doloribus
+				repellendus! Aut culpa amet rerum.
+				Praesentium, vel natus sequi, reprehenderit eos illo est doloremque molestiae provident perferendis
+				quasi quisquam officia. Dolore quas officia, dicta, consectetur laborum expedita cumque similique ex, a
+				autem provident quibusdam fugiat.
+				Culpa iusto sit officiis vel at consectetur, repudiandae sunt, asperiores, velit numquam molestiae nihil
+				aut ad itaque quam error ullam minus maxime quo accusantium voluptatibus voluptas quos! Porro, corporis
+				hic.
+				Ut quas, ipsam corrupti a consequatur quis velit iste perferendis impedit in! Cumque ex officia harum
+				possimus at commodi adipisci id sapiente labore! Nulla dolor vel at possimus dicta tempore.
+				Unde omnis assumenda aut hic molestias, quia, ratione aperiam totam dolorem, repellat rem cum quam
+				reprehenderit mollitia obcaecati atque! Nisi vero aliquam nesciunt eum ipsam ducimus quo amet adipisci
+				quam.
+				Fugiat aliquid quasi eius perspiciatis consequuntur, unde maxime culpa eum exercitationem quidem harum
+				placeat totam, ex corrupti quam alias facilis quo, voluptatibus illo fuga quae. Iusto at facere
+				voluptates rem!
 			</div>
 		</div>
 	</div>
 
 
-	
-	
+
+	<footer class="bg-white text-center text-white scrolleable">
+		<!-- Grid container -->
+		<div class="container p-4 pb-0">
+			<!-- Section: Social media -->
+			<section class="mb-4">
+				<!-- Facebook -->
+				<a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+					<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+					<path d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M37,19h-2c-2.14,0-3,0.5-3,2 v3h5l-1,5h-4v15h-5V29h-4v-5h4v-3c0-4,2-7,6-7c2.9,0,4,1,4,1V19z"/></svg>
+				</a>
+
+				<!-- Whatsapp -->
+				<a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+					<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M 15 3 C 8.373 3 3 8.373 3 15 C 3 17.251208 3.6323415 19.350068 4.7109375 21.150391 L 3.1074219 27 L 9.0820312 25.431641 C 10.829354 26.425062 12.84649 27 15 27 C 21.627 27 27 21.627 27 15 C 27 8.373 21.627 3 15 3 z M 10.892578 9.4023438 C 11.087578 9.4023438 11.287937 9.4011562 11.460938 9.4101562 C 11.674938 9.4151563 11.907859 9.4308281 12.130859 9.9238281 C 12.395859 10.509828 12.972875 11.979906 13.046875 12.128906 C 13.120875 12.277906 13.173313 12.453437 13.070312 12.648438 C 12.972312 12.848437 12.921344 12.969484 12.777344 13.146484 C 12.628344 13.318484 12.465078 13.532109 12.330078 13.662109 C 12.181078 13.811109 12.027219 13.974484 12.199219 14.271484 C 12.371219 14.568484 12.968563 15.542125 13.851562 16.328125 C 14.986562 17.342125 15.944188 17.653734 16.242188 17.802734 C 16.540187 17.951734 16.712766 17.928516 16.884766 17.728516 C 17.061766 17.533516 17.628125 16.864406 17.828125 16.566406 C 18.023125 16.268406 18.222188 16.319969 18.492188 16.417969 C 18.766188 16.515969 20.227391 17.235766 20.525391 17.384766 C 20.823391 17.533766 21.01875 17.607516 21.09375 17.728516 C 21.17075 17.853516 21.170828 18.448578 20.923828 19.142578 C 20.676828 19.835578 19.463922 20.505734 18.919922 20.552734 C 18.370922 20.603734 17.858562 20.7995 15.351562 19.8125 C 12.327563 18.6215 10.420484 15.524219 10.271484 15.324219 C 10.122484 15.129219 9.0605469 13.713906 9.0605469 12.253906 C 9.0605469 10.788906 9.8286563 10.071437 10.097656 9.7734375 C 10.371656 9.4754375 10.692578 9.4023438 10.892578 9.4023438 z"/></svg>
+				</a>
+
+				<!-- Instagram -->
+				<a class="btn btn-outline-dark btn-floating m-1" href="#!" role="button">
+					<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"/></svg>
+				</a>
+
+				<!-- Linkedin -->
+				<a class="btn btn-outline-dark btn-floating m-1 svv" href="#!" role="button">
+
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px">
+						<path
+							d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,
+							2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,
+							22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,
+							1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,
+							22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,
+							2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,
+							1.966,3.539,4.522V22z" />
+					</svg>
+				</a>
+
+
+
+			</section>
+
+		</div>
+
+		<div class="text-center text-black p-3" style="background-color: lightgrey;">
+			© 2023 Derechos Reservados:
+			<a class="text-black" href="index.html">Comedores Industriales del Pacífico</a>
+		</div>
+
+	</footer>
+
+
 </body>
 
 <script>
-console.log("Ya llego tilin");
-	var scroll = window.requestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60)};
-	 
+	console.log("Ya llego tilin");
+	var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
+
 	var elementsToShow = document.querySelectorAll('.scrolleable');
 
-    function loop() {
+	function loop() {
 		elementsToShow.forEach(function (element) {
 			if (isElementInViewport(element)) {
-				element.classList.add('is-visible'); 
+				element.classList.add('is-visible');
 			} else {
-      			element.classList.remove('is-visible');
-    		}
+				element.classList.remove('is-visible');
+			}
 		});
 
-	scroll(loop);
+		scroll(loop);
 	}
 
 	loop();
@@ -275,13 +405,13 @@ console.log("Ya llego tilin");
 		}
 		var rect = el.getBoundingClientRect();
 		return (
-		(rect.top <= 0 && rect.bottom >= 0)
-		||
-		(rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.top <= (window.innerHeight || document.documentElement.clientHeight))
-		||
-		(rect.top >= 0 &&
-			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+			(rect.top <= 0 && rect.bottom >= 0)
+			||
+			(rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+			||
+			(rect.top >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
 		);
 	}
 
