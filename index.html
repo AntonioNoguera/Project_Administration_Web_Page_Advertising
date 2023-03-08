@@ -25,12 +25,6 @@
 			height: 50px;
 		}
 
-		#navbar { 
-			margin-inline-start: 1%;
-			margin-inline-end: 1%;  
-			animation: cambiar 1s ease-in-out infinite;
-		}
-
 		body { 
 			/* Chrome 10-25, Safari 5.1-6 */
 			background: linear-gradient(to right, #FFCB6C, #019EE3); 
@@ -56,39 +50,95 @@
 			will-change: transform, opacity; 
 		}
 
+		.enlace{ 
+			display: inline-block;
+            position: relative;
+		}
+
+		.enlace::before,
+		.enlace::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 2px;
+		bottom: 0;
+		background-color: #70b3d4;
+		transition: width 0.2s ease-in-out;
+		}
+
+		.enlace::before {
+		left: 50%;
+		transform: translateX(-50%);
+		}
+
+		.enlace::after {
+		right: 50%;
+		transform: translateX(50%);
+		}
+
+		.enlace:hover::before,
+		.enlace:hover::after {
+		width: 100%;
+		}
+		.navbar-toggler:focus {
+			text-decoration: none;
+			outline: 0;
+			box-shadow: none;
+		}
+
+		.navbar-toggler:hover {
+			text-decoration: none;
+			outline: 0; 
+			box-shadow: 0px 0px 0px 2px lightgray;
+		} 
+
+		.topSpace{
+			opacity: 0;
+		}
+
 	</style>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
-		<div class="container-fluid" id="navbar">
-			<a class="navbar-brand" href="#">
-				<img id="headerImg" src="media/loghggo.png" class="img-fluid">
-				Comedores Industriales del Pacífico
+	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top " >
+		<div class="container-fluid d-flex justify-content-center" id="navbar"> 
+			<div class="row">
+
+			
+				<a class="navbar-brand " href="#">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12 col-md-2 col-lg-2">
+							<img id="headerImg" src="media/loghggo.png" class="mx-auto d-block">
+						</div>
+						<div class="col-sm-12 col-xs-12 col-md-10 col-lg-10 col-xl-10 my-auto text-center">
+							Comedores Industriales del Pacífico
+						</div>
+					</div>
 			</a>
 
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button> 
+			</div>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<div class="navbar-nav ms-auto">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<ul class="navbar-nav text-center mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">¿Quiénes Somos?</a>
+							<a class="nav-link active enlace" aria-current="page" href="#">¿Quiénes Somos?</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">¿Qué nos hace distintos?</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link" href="#">Beneficios de un servicio de comedor</a>
+						<li class="nav-item ">
+							<a class="nav-link enlace" href="#">¿Qué nos hace distintos?</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link" href="#">Contrataciones</a>
+							<a class="nav-link enlace" href="#">Beneficios de un servicio de comedor</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link enlace" href="#">Contrataciones</a>
 						</li>
 
 					</ul>
@@ -96,10 +146,27 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container m-10">
+	<div class="container topSpace">
 		<div class="row">
-			<div class="col-12 bg-white">
-			&nbsp;<br>&nbsp;<br>&nbsp;<br>
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+				&nbsp;
+			</div>
+
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+				&nbsp;
+			</div>
+
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-1 col-xl-1 bg-white">
+				&nbsp;
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-1 col-lg-1 col-xl-1 bg-white">
+				&nbsp;
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-1 col-lg-1 col-xl-1 bg-white">
+				&nbsp;
+			</div>
+			<div class="col-sm-12 col-xs-12 col-md-0 col-lg-1 col-xl-1 bg-white">
+				F
 			</div>
 		</div>
 	</div>
