@@ -139,6 +139,16 @@
 			border-radius: 10px;
 			padding: 10px 20px 10px 20px;
 		}
+
+		.cancelar{
+			background-color: rgb(243, 109, 106);
+			border: none;
+		}
+
+		.cancelar:hover{
+			background-color:rgb(251, 207, 206);
+			color:  rgb(121, 39, 37)
+		}
 	</style>
 </head>
 
@@ -326,39 +336,46 @@
 				Fugiat aliquid quasi eius perspiciatis consequuntur, unde maxime culpa eum exercitationem quidem harum
 				placeat totam, ex corrupti quam alias facilis quo, voluptatibus illo fuga quae. Iusto at facere
 				voluptates rem!
-				
+			</div>
+		</div>
+	</div>
+
+	<div class="container my-3 scrolleable ">
+		<div class="contenido row bg-white"> 
 				<form>
 					<h2>Ven a visitar nuestras instalaciones:</h2>
 					<div class="form-group">
 
 						<label for="inputEmpresa">Nombre de su Empresa:</label>
-						<input type="text" class="form-control" id="inputEmpresa">
+						<input type="text" class="form-control" id="inputEmpresa" placeholder="Ej. Industria Costurera Baja Californea">
 						
 					</div>
 
 					<div class="form-group">
 						<label for="inputInteresado">Nombre del Interesado:</label>
-						<input type="text" class="form-control" id="inputInteresado">
+						<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez">
 					</div>
 
 					<div class="form-group">
 						<label for="inputCorreo">Correo Eléctronico:</label>
-						<input type="text" class="form-control" id="inputCorreo">
+						<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com">
 					</div>
 
 					<div class="form-group">
 						<label for="inputHora">Fecha de su Visita:</label>
 						<input type="time" class="form-control" id="inputHora">
 					</div>
-
-					<div class="form-group">
-						<label for="inputHora">Hora de su Visita:</label>
-						<input type="time" class="form-control" id="inputHora">
-					</div>
-  
-					<input type="submit" class="btn-primary">
-				</form>
-			</div>
+					
+						<div class="form-group">
+							<label for="inputHora">Hora de su Visita:</label>
+							<input type="date" class="form-control" id="inputHora">
+						</div> 
+						<div class="row text-center d-block">
+							<input type="reset" class="btn btn-primary col-3 mt-3 mr-3 cancelar" value="Borrar">
+							<input type="submit" class="btn btn-primary col-8 mt-3" value="Enviar">
+						</div> 
+					
+				</form> 
 		</div>
 	</div>
 
