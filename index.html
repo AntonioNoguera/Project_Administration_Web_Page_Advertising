@@ -18,6 +18,8 @@
 	<style>
 		* {
 			font-family: 'Jost', sans-serif;
+			
+            user-select: none; 
 		}
 
 		#headerImg {
@@ -156,6 +158,14 @@
 			outline: 0;
 			box-sizing: border-box;
 		}
+
+		.texBox {
+			width: 80%;
+		}
+
+		p{
+			font-size: 1.1em;
+		}
 	</style>
 </head>
 
@@ -163,8 +173,6 @@
 	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
 		<div class="container-fluid d-flex justify-content-center" id="navbar">
 			<div class="row">
-
-
 				<a class="navbar-brand " href="#">
 					<div class="row">
 						<div class="col-sm-12 col-xs-12 col-md-2 col-lg-2">
@@ -233,22 +241,33 @@
 		</div>
 	</div>
 
-	<div class="scrolleable container my-3">
+	<div class="scrolleable container my-3 col-8">
 		<div class="row">
 			<div class="contenido col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white" id="quienes">
 				<h1>¿Quiénes Somos?</h1>
-				<p> 
-				Nosotros, Comedores Industriales del Pacífico, somos una empresa encargada de apoyar al sector industrial en el área de la alimentación, enfocándonos directamente en la calidad de área de trabajo de los empleados de la industria; como empresa buscamos siempre brindar un servicio de alta calidad, que el empleado este siempre contento con el alimento que recibe, buscando además de un alta calidad del producto respecto a sabor, un alta calidad respecto al valor nutrimental que el alimento es capaz de brindar al comensal.
+				<p>
+					Nosotros, Comedores Industriales del Pacífico, somos una empresa encargada de apoyar al sector
+					industrial en el área de la alimentación, enfocándonos directamente en la calidad de área de trabajo
+					de los empleados de la industria; como empresa buscamos siempre brindar un servicio de alta calidad,
+					que el empleado este siempre contento con el alimento que recibe, buscando además de un alta calidad
+					del producto respecto a sabor, un alta calidad respecto al valor nutrimental que el alimento es
+					capaz de brindar al comensal.
 				</p>
 
 				<p>
-Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo que nuestra amplia experiencia nos respalda en lo que calidad se refiere, nuestros empleados buscan siempre ser capaces de resolver cualquier tipo de percance en lo relacionado a la alimentación se refiere, aumentando continuamente la calidad del servicio, por lo que nosotros nunca dejamos de mejorar nuestros servicios, así que cualquier queja es inmediatamente atendida, y siempre tratamos de brindar la sensación de seguridad a nuestros comensales, que todas sus quejas serán atendidas y no serán ignoradas.
-</p>
+					Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo que nuestra amplia
+					experiencia nos respalda en lo que calidad se refiere, nuestros empleados buscan siempre ser capaces
+					de resolver cualquier tipo de percance en lo relacionado a la alimentación se refiere, aumentando
+					continuamente la calidad del servicio, por lo que nosotros nunca dejamos de mejorar nuestros
+					servicios, así que cualquier queja es inmediatamente atendida, y siempre tratamos de brindar la
+					sensación de seguridad a nuestros comensales, que todas sus quejas serán atendidas y no serán
+					ignoradas.
+				</p>
 
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable ">
+	<div class="container my-3 scrolleable col-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="distintos">
 				<h1>¿Qué nos hace distintos?</h1>
@@ -272,7 +291,7 @@ Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable">
+	<div class="container my-3 scrolleable  col-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="beneficios">
 				<h1>Beneficios del servicio de comedor</h1>
@@ -308,7 +327,7 @@ Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable">
+	<div class="container my-3 scrolleable  col-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="Contrataciones">
 				<h1>Contrataciones</h1>
@@ -336,7 +355,7 @@ Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo
 		</div>
 	</div>
 
-	<div class="container my-3 scrolleable ">
+	<div class="container my-3 scrolleable  col-8 ">
 		<div class="contenido row bg-white">
 			<form>
 				<h2>Ven a visitar nuestras instalaciones:</h2>
@@ -344,32 +363,34 @@ Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo
 
 					<label for="inputEmpresa">Nombre de su Empresa:</label>
 					<input type="text" class="form-control" id="inputEmpresa"
-						placeholder="Ej. Industria Costurera Baja California">
+						placeholder="Ej. Industria Costurera Baja California" autocomplete="off">
 
 				</div>
 
 				<div class="form-group">
 					<label for="inputInteresado">Nombre del Interesado:</label>
-					<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez">
+					<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez"
+						autocomplete="off">
 				</div>
 
 				<div class="form-group">
 					<label for="inputCorreo">Correo Eléctronico:</label>
-					<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com">
+					<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com"
+						autocomplete="off">
 				</div>
 
 				<div class="form-group">
 					<label for="inputHora">Fecha de su Visita:</label>
-					<input type="time" class="form-control" id="inputHora">
+					<input type="time" class="form-control" id="inputHora" autocomplete="off">
 				</div>
 
 				<div class="form-group">
 					<label for="inputHora">Hora de su Visita:</label>
-					<input type="date" class="form-control" id="inputHora">
+					<input type="date" class="form-control" id="inputHora" autocomplete="off">
 				</div>
 				<div class="row text-center d-block">
 					<input type="reset" class="btn btn-primary col-3 mt-3 mr-3 cancelar" value="Borrar">
-					<input type="submit" class="btn btn-primary col-8 mt-3" value="Enviar">
+					<input type="submit" class="btn btn-primary col-8 mt-3" value="Enviar" autocomplete="off">
 				</div>
 
 			</form>
