@@ -186,7 +186,8 @@
 			margin-left: -100px;
 		}
 
-		.placeSaver{ opacity: 0; }
+		.placeSaver{ opacity: 0; } 
+		
 	</style>
 </head>
 
@@ -292,6 +293,7 @@
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="distintos">
 				<h1>¿Qué nos hace distintos?</h1>
+				<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorem assumenda rerum magnam. Beatae
 				quod laudantium harum eum veniam asperiores aliquam illum minima. Beatae, a. Fuga et rem eos optio.
 				Accusamus placeat excepturi et provident optio sint repellendus, porro id nam assumenda iusto fuga
@@ -309,6 +311,9 @@
 				Dignissimos magnam repudiandae totam dolore vero, exercitationem iure autem voluptatem est recusandae
 				maxime eligendi! Necessitatibus velit rerum esse praesentium! Accusantium commodi, unde repudiandae
 				voluptatum consequatur aperiam placeat cum animi ex? 
+
+				
+			</p>
 				<div class="carousel col-sm-12 col-xs-12 col-md-12 col-lg-12 mt-4 mb-2">
 					<img src="media/BUENOS/FIN/A.png" class=" placeSaver img-fluid">
 					<img src="media/BUENOS/FIN/A.png" class="rounded slide img-fluid active"> 
@@ -326,6 +331,8 @@
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="beneficios">
 				<h1>Beneficios del servicio de comedor</h1>
+				
+			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum obcaecati ad veniam earum, ex iste
 				saepe magni, nisi error deserunt voluptates! Voluptatum, optio eligendi! Possimus et placeat animi
 				commodi ipsa?
@@ -355,6 +362,8 @@
 				Quaerat autem natus ipsum aliquid? Facere voluptate, illo officiis adipisci ipsa cum saepe inventore
 				itaque voluptates ab eligendi dicta recusandae, nisi, fugit est perferendis id. Recusandae itaque
 				consectetur eligendi quia!
+			
+			</p>
 			</div>
 		</div>
 	</div>
@@ -362,6 +371,8 @@
 		<div class="row">
 			<div class="contenido bg-white" id="Contrataciones">
 				<h1>Contrataciones</h1>
+				
+			<p>
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id cum ea incidunt tenetur quasi maiores
 				explicabo enim qui facilis! Libero deleniti alias incidunt commodi minus laborum molestiae, debitis
 				rerum. Sed!
@@ -382,6 +393,8 @@
 				Fugiat aliquid quasi eius perspiciatis consequuntur, unde maxime culpa eum exercitationem quidem harum
 				placeat totam, ex corrupti quam alias facilis quo, voluptatibus illo fuga quae. Iusto at facere
 				voluptates rem!
+				
+			</p>
 			</div>
 		</div>
 	</div>
@@ -416,12 +429,12 @@
 				<div class="form-group mt-2">
 					<label for="inputHora">Hora de su Visita:</label>
 					<input type="time" class="form-control" id="inputHora" autocomplete="off">
+				</div> 
+				<div class="row px-1">
+					<input type="reset" class="btn btn-primary col-4 cancelar" value="Borrar">
+					<button class="btn btn-primary col-8" value="Enviar" onclick="validarDatos()" autocomplete="off">Enviar</button>
 				</div>
-				<div class="row text-center d-block">
-					<input type="reset" class="btn btn-primary col-3 mt-3 mr-3 cancelar" value="Borrar">
-					<button class="btn btn-primary col-8 mt-3" value="Enviar" onclick="validarDatos()" autocomplete="off">Enviar</button>
-				</div>
- 
+					
 		</div>
 	</div>
 
@@ -547,17 +560,17 @@
 		var contadorErrores = 0;
 
 		if(empresa == "" || empresa.length <= 10){
-			alertaMensaje();
+			alertaMensaje("empresa");
 			contadorErrores++;
 		}
 
 		if(interesado == "" || interesado.length <= 24){
-			alertaMensaje();
+			alertaMensaje("interesado");
 			contadorErrores++;
 		}
 
 		if(correo == "" || correo <= 15){
-			alertaMensaje();
+			alertaMensaje("correo");
 			contadorErrores++;
 		}
 
@@ -591,9 +604,9 @@
 		}
 	}
 
-	function alertaMensaje(){
+	function alertaMensaje(mes){
 		//Acá se muestra el error visual
-		alert("♥");
+		alert(mes);
 	}
 
 	function ajax(empresa, interesado, correo, fecha, hora){
