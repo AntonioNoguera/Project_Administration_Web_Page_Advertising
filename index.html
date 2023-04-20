@@ -389,32 +389,31 @@
 	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8 ">
 		<div class="contenido row bg-white"> 
 				<h2>Ven a visitar nuestras instalaciones:</h2>
-				<div class="form-group">
 
+				<div class="form-group mt-2">
 					<label for="inputEmpresa">Nombre de su Empresa:</label>
 					<input type="text" class="form-control" id="inputEmpresa"
 						placeholder="Ej. Industria Costurera Baja California" autocomplete="off">
-
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="inputInteresado">Nombre del Interesado:</label>
 					<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez"
 						autocomplete="off">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="inputCorreo">Correo Eléctronico:</label>
 					<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com"
 						autocomplete="off">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="inputHora">Fecha de su Visita:</label>
 					<input type="date" class="form-control" id="inputFecha" autocomplete="off">
 				</div>
 
-				<div class="form-group">
+				<div class="form-group mt-2">
 					<label for="inputHora">Hora de su Visita:</label>
 					<input type="time" class="form-control" id="inputHora" autocomplete="off">
 				</div>
@@ -534,16 +533,14 @@
 		slides[(currentSlide +slides.length-2) % slides.length].classList.remove('disabled');
     }
 	
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 5000); 
 
 	function validarDatos(){
 		var empresa = document.getElementById("inputEmpresa").value.toString();
 		var interesado = document.getElementById("inputInteresado").value.toString();
 		var correo = document.getElementById("inputCorreo").value.toString();
 		var fecha = document.getElementById("inputFecha").value;
-		var hora = document.getElementById("inputHora").value.toString();
-
-		//console.log(empresa,interesado,correo,fecha,hora);
+		var hora = document.getElementById("inputHora").value.toString(); 
 
 		console.log(correo);
 
@@ -572,8 +569,11 @@
 			
 			var hoy = new Date().toLocaleDateString().split("/"); 
 
-			var diferencia = (parseInt(cita[0])*365 + diasPorMes[parseInt(cita[1])-1] + parseInt(cita[2])) - (diasPorMes[parseInt(hoy[0])] + parseInt(hoy[1]) + parseInt(hoy[2])*365);
+			var diferencia = (parseInt(cita[0])*365 + diasPorMes[parseInt(cita[1])-1] + parseInt(cita[2])) - (diasPorMes[parseInt(hoy[0])-1] + parseInt(hoy[1]) + parseInt(hoy[2])*365);
 			
+			console.log(cita);
+			console.log(hoy)
+
 			console.log(diferencia);
 
 			if(diferencia<0){ 
@@ -585,16 +585,37 @@
 		}
 
 		if(contadorErrores==0){
-			ajax();
+			ajax(empresa, interesado, correo, fecha, hora);
+		}else{
+			alert("HAY ERRORES");
 		}
 	}
 
 	function alertaMensaje(){
+		//Acá se muestra el error visual
 		alert("♥");
 	}
 
-	function ajax(){
-		alert("Exitosa");
+	function ajax(empresa, interesado, correo, fecha, hora){
+		//Ajax ejecutado
+		alert("Se compila!");
+		if(window.XMLHttpRequest){xml = new XMLHttpRequest();}else{xml = ActiveXObject("Microsoft.XMLHTTP");} 
+		
+		var info = "bussiness="+empresa+"&interested="+interesado+"&mail="+correo+"&date="+fecha+"&time="+hora;
+
+		xml.onreadystatechange = function(){
+			if(xml.readyState==4 && xml.status==200){
+				var mensaje = xml.responseText;
+				
+				if(mensaje =="como?"){  
+					alert("LOGICA REALIZADA");
+				}
+			}
+		}
+
+		xml.open("POST","insertQuery.php",true);
+		xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xml.send(info);
 	}
 </script>
 
