@@ -607,9 +607,10 @@
 			if(xml.readyState==4 && xml.status==200){
 				var mensaje = xml.responseText;
 				
-				if(mensaje =="como?"){  
+				if(mensaje =="realizado"){  
 					alert("LOGICA REALIZADA");
 				}
+				
 			}
 		}
 
@@ -617,6 +618,7 @@
 		xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		xml.send(info);
 	}
-</script>
 
+
+</script>
 </html>

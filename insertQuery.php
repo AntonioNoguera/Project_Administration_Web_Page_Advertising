@@ -5,14 +5,10 @@
     $fecha = $_POST['date'];
     $hora = $_POST['time']; 
 
+    $conexion = mysqli_connect("localhost","root","","industrialesdelpacífico")or die("Error: Error en la conexion con la base de datos");
 
-    //$conexion = mysqli_connect("localhost","id9406842_root","quesueno2121","id9406842_usuarios")or die("hola");
-
-    //$registros = mysqli_query($conexion, "select user,conta from miembros where user='$conto'")or die("Error de Registros");
-
-
-    //$reg=mysqli_fetch_array($registros);
-
-    echo "como?";
+    mysqli_query($conexion,"insert into citasregistradas(empresa,representante,correo,fecha,hora) values ('$empresa','$interesado','$correo','$fecha','$hora,')")or die("Error en el insert");
+    
+    echo "realizado";
     
 ?>
