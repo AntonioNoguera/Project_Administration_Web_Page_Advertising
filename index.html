@@ -166,10 +166,7 @@
 		p{
 			font-size: 1.1em;
 		}
-
-		.carousel {    
-        }
-
+		
         .slide {    
 			position:absolute;
 			left: 0;
@@ -265,9 +262,9 @@
 		</div>
 	</div>
 
-	<div class="scrolleable container my-3 col-8">
-		<div class="row">
-			<div class="contenido col-sm-12 col-xs-10 col-md-12 col-lg-12 col-xl-12 bg-white" id="quienes">
+	<div class="scrolleable container my-3 col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
+		<div class="row ">
+			<div class="contenido bg-white" id="quienes">
 				<h1>¿Quiénes Somos?</h1>
 				<p>
 					Nosotros, Comedores Industriales del Pacífico, somos una empresa encargada de apoyar al sector
@@ -291,7 +288,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable col-8">
+	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="distintos">
 				<h1>¿Qué nos hace distintos?</h1>
@@ -325,7 +322,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable  col-8">
+	<div class="container my-3 scrolleable  col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="beneficios">
 				<h1>Beneficios del servicio de comedor</h1>
@@ -361,9 +358,9 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable  col-8">
+	<div class="container my-3 scrolleable  col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row">
-			<div class="contenido col-12 bg-white" id="Contrataciones">
+			<div class="contenido bg-white" id="Contrataciones">
 				<h1>Contrataciones</h1>
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id cum ea incidunt tenetur quasi maiores
 				explicabo enim qui facilis! Libero deleniti alias incidunt commodi minus laborum molestiae, debitis
@@ -389,9 +386,8 @@
 		</div>
 	</div>
 
-	<div class="container my-3 scrolleable  col-8 ">
-		<div class="contenido row bg-white">
-			<form>
+	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8 ">
+		<div class="contenido row bg-white"> 
 				<h2>Ven a visitar nuestras instalaciones:</h2>
 				<div class="form-group">
 
@@ -415,19 +411,18 @@
 
 				<div class="form-group">
 					<label for="inputHora">Fecha de su Visita:</label>
-					<input type="time" class="form-control" id="inputHora" autocomplete="off">
+					<input type="date" class="form-control" id="inputFecha" autocomplete="off">
 				</div>
 
 				<div class="form-group">
 					<label for="inputHora">Hora de su Visita:</label>
-					<input type="date" class="form-control" id="inputHora" autocomplete="off">
+					<input type="time" class="form-control" id="inputHora" autocomplete="off">
 				</div>
 				<div class="row text-center d-block">
 					<input type="reset" class="btn btn-primary col-3 mt-3 mr-3 cancelar" value="Borrar">
-					<input type="submit" class="btn btn-primary col-8 mt-3" value="Enviar" autocomplete="off">
+					<button class="btn btn-primary col-8 mt-3" value="Enviar" onclick="validarDatos()" autocomplete="off">Enviar</button>
 				</div>
-
-			</form>
+ 
 		</div>
 	</div>
 
@@ -508,8 +503,7 @@
 
 	loop();
 
-	function isElementInViewport(el) {
-		// special bonus for those using jQuery
+	function isElementInViewport(el) { 
 		if (typeof jQuery === "function" && el instanceof jQuery) {
 			el = el[0];
 		}
@@ -527,14 +521,12 @@
 
 	var slides = document.querySelectorAll('.slide'); 
     var currentSlide = 0;  
-    function nextSlide() {  
-		console.log("Desactivo "+currentSlide);
+    function nextSlide() {   
 		
 		slides[currentSlide].classList.remove('active');
 		slides[currentSlide].classList.add('disabled');	
 		currentSlide = (currentSlide + 1) % slides.length;
 		
-		console.log("Activo "+currentSlide);
 		slides[currentSlide].classList.remove('disabled');
 		slides[currentSlide].classList.add('active');
 
@@ -542,8 +534,68 @@
 		slides[(currentSlide +slides.length-2) % slides.length].classList.remove('disabled');
     }
 	
-    setInterval(nextSlide, 2000);
+    setInterval(nextSlide, 5000);
 
+	function validarDatos(){
+		var empresa = document.getElementById("inputEmpresa").value.toString();
+		var interesado = document.getElementById("inputInteresado").value.toString();
+		var correo = document.getElementById("inputCorreo").value.toString();
+		var fecha = document.getElementById("inputFecha").value;
+		var hora = document.getElementById("inputHora").value.toString();
+
+		//console.log(empresa,interesado,correo,fecha,hora);
+
+		console.log(correo);
+
+		var contadorErrores = 0;
+
+		if(empresa == "" || empresa.length <= 10){
+			alertaMensaje();
+			contadorErrores++;
+		}
+
+		if(interesado == "" || interesado.length <= 24){
+			alertaMensaje();
+			contadorErrores++;
+		}
+
+		if(correo == "" || correo <= 15){
+			alertaMensaje();
+			contadorErrores++;
+		}
+
+		if(!(fecha == "")){
+			
+			diasPorMes = [31,29,31,30,31,30,31,31,30,31,30,31];
+
+			var cita = fecha.split("-"); 
+			
+			var hoy = new Date().toLocaleDateString().split("/"); 
+
+			var diferencia = (parseInt(cita[0])*365 + diasPorMes[parseInt(cita[1])-1] + parseInt(cita[2])) - (diasPorMes[parseInt(hoy[0])] + parseInt(hoy[1]) + parseInt(hoy[2])*365);
+			
+			console.log(diferencia);
+
+			if(diferencia<0){ 
+				alert("Fecha Invalida!!");
+				contadorErrores++;
+			}
+		}else{
+			contadorErrores++;
+		}
+
+		if(contadorErrores==0){
+			ajax();
+		}
+	}
+
+	function alertaMensaje(){
+		alert("♥");
+	}
+
+	function ajax(){
+		alert("Exitosa");
+	}
 </script>
 
 </html>
