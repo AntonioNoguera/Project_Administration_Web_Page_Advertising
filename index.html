@@ -136,7 +136,7 @@
 			margin: 0;
 			padding: 0;
 		}
-
+ 
 		.contenido {
 			border-radius: 10px;
 			padding: 10px 20px 10px 20px;
@@ -166,6 +166,30 @@
 		p{
 			font-size: 1.1em;
 		}
+
+		.carousel {    
+        }
+
+        .slide {    
+			position:absolute;
+			left: 0;
+			margin-left: 100px;
+			top:0;
+			opacity: 0;
+			transition: opacity 1s ease-in-out,margin-left 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+			margin-left: 0px;
+        }
+
+		.slide.disabled{
+			opacity: 0;
+			margin-left: -100px;
+		}
+
+		.placeSaver{ opacity: 0; }
 	</style>
 </head>
 
@@ -287,7 +311,17 @@
 				unde reprehenderit.
 				Dignissimos magnam repudiandae totam dolore vero, exercitationem iure autem voluptatem est recusandae
 				maxime eligendi! Necessitatibus velit rerum esse praesentium! Accusantium commodi, unde repudiandae
-				voluptatum consequatur aperiam placeat cum animi ex?
+				voluptatum consequatur aperiam placeat cum animi ex? 
+				<div class="carousel col-sm-12 col-xs-12 col-md-12 col-lg-12 mt-4 mb-2">
+					<img src="media/BUENOS/FIN/A.png" class=" placeSaver img-fluid">
+					<img src="media/BUENOS/FIN/A.png" class="rounded slide img-fluid active"> 
+					<img src="media/BUENOS/FIN/B.png" class="rounded slide img-fluid"> 
+					<img src="media/BUENOS/FIN/C.png" class="rounded slide img-fluid"> 
+					<img src="media/BUENOS/FIN/D.png" class="rounded slide img-fluid"> 
+					<img src="media/BUENOS/FIN/E.png" class="rounded slide img-fluid"> 
+					<img src="media/BUENOS/FIN/F.png" class="rounded slide img-fluid"> 
+				</div>
+					
 			</div>
 		</div>
 	</div>
@@ -455,8 +489,7 @@
 
 </body>
 
-<script>
-	console.log("Ya llego tilin");
+<script> 
 	var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
 
 	var elementsToShow = document.querySelectorAll('.scrolleable');
@@ -491,6 +524,25 @@
 				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
 		);
 	}
+
+	var slides = document.querySelectorAll('.slide'); 
+    var currentSlide = 0;  
+    function nextSlide() {  
+		console.log("Desactivo "+currentSlide);
+		
+		slides[currentSlide].classList.remove('active');
+		slides[currentSlide].classList.add('disabled');	
+		currentSlide = (currentSlide + 1) % slides.length;
+		
+		console.log("Activo "+currentSlide);
+		slides[currentSlide].classList.remove('disabled');
+		slides[currentSlide].classList.add('active');
+
+		//Eliminar Rudio
+		slides[(currentSlide +slides.length-2) % slides.length].classList.remove('disabled');
+    }
+	
+    setInterval(nextSlide, 1000);
 
 </script>
 
