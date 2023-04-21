@@ -5,7 +5,7 @@
     $fecha = $_POST['date'];
     $hora = $_POST['time']; 
 
-    $conexion = mysqli_connect("localhost","root","","citasregistradas")or die("Error: Error en la conexion con la base de datos");
+    $conexion = mysqli_connect("localhost","root","","industrialesdelpacífico")or die("Error: Error en la conexion con la base de datos");
 
     mysqli_query($conexion,"insert into citasregistradas(empresa,representante,correo,fecha,hora) values ('$empresa','$interesado','$correo','$fecha','$hora,')")or die("Error en el insert");
     
