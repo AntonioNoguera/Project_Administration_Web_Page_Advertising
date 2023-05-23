@@ -1,5 +1,5 @@
 
-var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
+	var scroll = window.requestAnimationFrame || function (callback) { window.setTimeout(callback, 1000 / 60) };
 
 	var elementsToShow = document.querySelectorAll('.scrolleable');
 
@@ -49,36 +49,33 @@ var scroll = window.requestAnimationFrame || function (callback) { window.setTim
     }
 	
     setInterval(nextSlide, 5000); 
-
+	var strAlert="";
 	function validarDatos(){
+		limpiezaErrores();
+		strAlert="";
 		var empresa = document.getElementById("inputEmpresa").value.toString();
 		var interesado = document.getElementById("inputInteresado").value.toString();
 		var correo = document.getElementById("inputCorreo").value.toString();
 		var fecha = document.getElementById("inputFecha").value;
-		var hora = document.getElementById("inputHora").value.toString(); 
-
-		console.log(correo);
-
-		var contadorErrores = 0;
+		var hora = document.getElementById("inputHora").value.toString();  
+ 
 
 		if(empresa == "" || empresa.length <= 10){
-			alertaMensaje("empresa");
-			contadorErrores++;
+			ErrorVisual("inputEmpresa");
+			strAlert+="El nombre de la empresa deberá de ser de por lo menos 10 dígitos de longitud.</br>"; 
 		}
 
 		if(interesado == "" || interesado.length <= 24){
-			alertaMensaje("interesado");
-			contadorErrores++;
+			ErrorVisual("inputInteresado");
+			strAlert+="El nombre del interesado deberá de ser de por lo menos 24 dígitos de longitud.</br>"; 
 		}
 
 		if(correo == "" || correo <= 15){
-			alertaMensaje("correo");
-			contadorErrores++;
+			ErrorVisual("inputCorreo");
+			strAlert+="El correo electrónico deberá de ser de por lo menos 15 dígitos de longitud.</br>"; 
 		}
 
-		if(!(fecha == "")){
-			
-
+		if(!(fecha == "")){ 
 
 			diasPorMes = [31,29,31,30,31,30,31,31,30,31,30,31];
 
@@ -109,16 +106,16 @@ var scroll = window.requestAnimationFrame || function (callback) { window.setTim
 			console.log(yearGap+" / "+mesGap+" / "+diaGap);
 
 			if(flag){ 
-				alert("Fecha Invalida!!");
-				contadorErrores++;
+				strAlert+="La fecha establecida debe de ser por lo menos 7 días despues del día actual.</br>";
+				ErrorVisual("inputFecha"); 
 			}
 
 		}else{
-			contadorErrores++;
+			strAlert+="El campo de la fecha no puede estar vacío.</br>";
+			ErrorVisual("inputFecha"); 
 		}
 
-		if(!(hora == "")){
-			console.log(hora);
+		if(!(hora == "")){ 
 			var last = hora.split(":");
 			var hora = parseInt(last[0]);
 			var min = parseInt(last[1]);
@@ -127,25 +124,76 @@ var scroll = window.requestAnimationFrame || function (callback) { window.setTim
 			
 			console.log(hora*60+min);
 			if(!(last>=480 && last<=1020)){
-				alert("Hora Inválida, Seleccione una hora entre las 8:00 am y 5:00 pm");
-				contadorErrores++;
+				ErrorVisual("inputHora");
+				strAlert+="La hora seleccionada debe de estar entre las 8:00 am y 5:00 pm.</br>"; 
 			}
 
 		}else{
-			contadorErrores++;
+			ErrorVisual("inputHora");
+			strAlert+="El campo de la hora no puede estar vacío."; 
 		}
 
-		if(contadorErrores==0){
+		if(strAlert==""){
 			//ajax(empresa, interesado, correo, fecha, hora);
+			limpiarDatos();
+			showAlert("Felicidades","Tu solicitud ha sido procesada de forma correcta","verde");
 		}else{
-			alert("HAY ERRORES");
+			//Acá desplegar
+			showAlert("Tu solicitud tiene algunos errores",strAlert,"rojo");
 		}
 	}
 
-	function alertaMensaje(mes){
-		//Acá se muestra el error visual
-		alert(mes);
+	function ErrorVisual(idRecibido){
+		document.getElementById(idRecibido).classList.add('mistake');	
 	}
+
+	function limpiezaErrores(idRecibido){
+		if(idRecibido==null){
+			arreglo=["inputEmpresa","inputInteresado","inputCorreo","inputFecha","inputHora"]; 
+
+			for(var i=0;i<arreglo.length;i++) { 
+				document.getElementById(arreglo[i]).classList.remove('mistake');	 
+			}
+		}else{
+			document.getElementById(idRecibido).classList.remove('mistake');
+		}
+
+		
+	} 
+
+	function limpiarDatos(){
+		document.getElementById("inputEmpresa").value="";
+		document.getElementById("inputInteresado").value="";
+		document.getElementById("inputCorreo").value="";
+		document.getElementById("inputFecha").value="";
+		document.getElementById("inputHora").value="";
+
+		limpiezaErrores();
+	}
+
+    function showAlert(title,message,color) {
+		if(color=="rojo"){
+			document.getElementById("custom-alert").style.color="rgb(243, 109, 106);";
+		}else{
+			document.getElementById("custom-alert").style.color="rgb(90, 222, 53 )";
+		}
+        var alertElement = document.getElementById('custom-alert');
+        
+        var messageElement = document.getElementById('alert-message');
+        var alertTitle = document.getElementById('alert-title');
+
+        alertTitle.innerText = title;
+        messageElement.innerHTML = message;
+        alertElement.style.display = 'block';
+    }
+
+    function hideAlert() {
+        var alertElement = document.getElementById('custom-alert');
+        
+        alertElement.style.display = 'none';
+    }
+
+    var closeButton = document.getElementById('alert-close').addEventListener('click', hideAlert);
 
 	function ajax(empresa, interesado, correo, fecha, hora){
 		//Ajax ejecutado

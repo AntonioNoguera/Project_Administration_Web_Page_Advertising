@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+
+    <style>  
+    .alert {
+        position: fixed; 
+        padding: 10px;
+        background-color: #ffc107;
+        color: #fff;
+        border: 1px solid #e0a800;
+        border-radius: 4px;
+        display: none;
+    } 
+    
+    .alert-icon {
+        font-weight: bold;
+        font-size: 18px;
+        margin-right: 5px;
+    }
+
+    .alert-message {
+        font-weight: bold;
+    }
+
+    .alert-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: none;
+        background: transparent;
+        color: #fff;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    #custom-alert {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border:3px solid white;
+        text-align: center;
+        border-radius: 30px;
+        transition: box-shadow 1s;
+        box-shadow: 0px 0px 20px white;
+        min-width:758px;
+        width:40%;
+        display:inline-block;  
+    }
+
+    </style>
+</head>
+<body>  
+    <div id="custom-alert" class="alert alert-custom">
+        <p id="alert-title" class="alert-message">test</p>
+        
+        <p id="alert-message" class="alert-message"></p>
+        <button id="alert-close" class="alert-close">&times;</button>
+    </div>
+</body>
+
+<script>
+    console.log("asdf");
+
+    function showAlert(title,message) {
+        var alertElement = document.getElementById('custom-alert');
+        
+        var messageElement = document.getElementById('alert-message');
+        var alertTitle = document.getElementById('alert-title');
+
+        alertTitle.innerText = title;
+        messageElement.innerText = message;
+        alertElement.style.display = 'block';
+    }
+
+    function hideAlert() {
+        var alertElement = document.getElementById('custom-alert');
+        
+        alertElement.style.display = 'none';
+    }
+
+    var closeButton = document.getElementById('alert-close');
+    closeButton.addEventListener('click', hideAlert);
+    showAlert("Titulo","HolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSa HolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSaHolSa");
+</script>
+</html>

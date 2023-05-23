@@ -18,8 +18,8 @@
 	<style>
 		* {
 			font-family: 'Jost', sans-serif;
-			
-            user-select: none; 
+
+			user-select: none;
 		}
 
 		#headerImg {
@@ -136,20 +136,10 @@
 			margin: 0;
 			padding: 0;
 		}
- 
+
 		.contenido {
 			border-radius: 10px;
 			padding: 10px 20px 10px 20px;
-		}
-
-		.cancelar {
-			background-color: rgb(243, 109, 106);
-			border: none;
-		}
-
-		.cancelar:hover {
-			background-color: rgb(251, 207, 206);
-			color: rgb(121, 39, 37)
 		}
 
 		html {
@@ -163,31 +153,97 @@
 			width: 80%;
 		}
 
-		p{
+		p {
 			font-size: 1.1em;
 		}
-		
-        .slide {    
-			position:absolute;
+
+		.slide {
+			position: absolute;
 			left: 0;
 			margin-left: 50px;
-			top:0;
+			top: 0;
 			opacity: 0;
-			transition: opacity 1s ease-in-out,margin-left 1s ease-in-out;
-        }
+			transition: opacity 1s ease-in-out, margin-left 1s ease-in-out;
+		}
 
-        .slide.active {
-            opacity: 1;
+		.slide.active {
+			opacity: 1;
 			margin-left: 0px;
-        }
+		}
 
-		.slide.disabled{
+		.slide.disabled {
 			opacity: 0;
 			margin-left: -50px;
 		}
 
-		.placeSaver{ opacity: 0; } 
-		
+		.placeSaver {
+			opacity: 0;
+		}
+
+		#reset {
+			background-color: rgb(243, 109, 106);
+			border: none;
+		}
+
+		#reset:hover {
+			background-color: rgb(251, 207, 206);
+			color: rgb(121, 39, 37)
+		}
+
+		#reset:active{
+			background-color: rgb(202, 36, 33);
+		}
+
+		#reset:focus {
+			text-decoration: none;  
+			box-shadow: 0 0 0 0.25rem rgb(251, 207, 206);
+		}
+
+	.spana{ 
+		color:#E24040;
+		font-size: 38px;
+		opacity: 1;
+		padding-left: 5px;
+		transition: opacity 1s,padding-left 1s;
+	}
+
+	.mistake{
+		box-shadow: 0 0 0 0.10rem rgb(243, 109, 106);
+		color:rgb(193, 73, 71);
+	} 
+ 
+    .alert-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        border: none;
+        background: transparent;
+        color: gray;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+	.alert-message{
+		color: gray;
+	}
+
+    #custom-alert {
+		background-color: white;
+		box-shadow: 0px 0px 800px 90px black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+		color:rgb(243, 109, 106);
+        transform: translate(-50%, -50%);
+        border:0 solid white;
+        text-align: center;
+        border-radius: 30px;
+        transition: box-shadow 1s; 
+        min-width:758px;
+        width:40%;
+        display:inline-block;  
+    } 
+
 	</style>
 </head>
 
@@ -220,17 +276,17 @@
 						<li class="nav-item">
 							<a class="nav-link enlace" aria-current="page" href="#pseudoTarget">¿Quiénes Somos?</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link enlace" href="#beneficios">Beneficios de un servicio de comedor</a>
+						</li>
 						<li class="nav-item ">
-							<a class="nav-link enlace" href="#quienes">¿Qué nos hace distintos?</a>
+							<a class="nav-link enlace" href="#distintos">¿Qué nos hace distintos?</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link enlace" href="#distintos">Beneficios de un servicio de comedor</a>
+							<a class="nav-link enlace" href="#contratenos">Contrataciones</a>
 						</li>
 
-						<li class="nav-item">
-							<a class="nav-link enlace" href="#beneficios">Contrataciones</a>
-						</li>
 
 					</ul>
 				</div>
@@ -238,9 +294,9 @@
 		</div>
 	</nav>
 
-	<div class="container topSpace" id="pseudoTarget">
+	<div class="container topSpace">
 		<div class="row">
-			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white">
+			<div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12 bg-white" id="pseudoTarget">
 				&nbsp;
 			</div>
 
@@ -257,12 +313,12 @@
 			<div class="col-sm-12 col-xs-12 col-md-1 col-lg-1 col-xl-1 bg-white">
 				&nbsp;
 			</div>
-			<div class="col-sm-12 col-xs-12 col-md-0 col-lg-1 col-xl-1 bg-white">
+			<div class="col-sm-12 col-xs-12 col-md-0 col-lg-1 col-xl-1 bg-white ">
 				F
 			</div>
 		</div>
 	</div>
-
+	<!--Quienes Somos-->
 	<div class="scrolleable container my-3 col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row ">
 			<div class="contenido bg-white" id="quienes">
@@ -276,7 +332,7 @@
 					capaz de brindar al comensal.
 				</p>
 
-				<p>
+				<p id="beneficios">
 					Comedores Industriales tiene más de 2 años de experiencia en el sector, por lo que nuestra amplia
 					experiencia nos respalda en lo que calidad se refiere, nuestros empleados buscan siempre ser capaces
 					de resolver cualquier tipo de percance en lo relacionado a la alimentación se refiere, aumentando
@@ -289,153 +345,374 @@
 			</div>
 		</div>
 	</div>
-	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
-		<div class="row">
-			<div class="contenido col-12 bg-white" id="distintos">
-				<h1>¿Qué nos hace distintos?</h1>
-				<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dolorem assumenda rerum magnam. Beatae
-				quod laudantium harum eum veniam asperiores aliquam illum minima. Beatae, a. Fuga et rem eos optio.
-				Accusamus placeat excepturi et provident optio sint repellendus, porro id nam assumenda iusto fuga
-				voluptatem incidunt. Voluptas quae quasi aperiam. Cumque optio illo ut perspiciatis expedita nulla totam
-				perferendis? Necessitatibus.
-				Commodi dicta minus ipsum perferendis nesciunt eos est in iure qui eum inventore corrupti ad, neque
-				pariatur quis doloribus ab necessitatibus. Aliquid, facilis amet sint consequatur doloremque praesentium
-				nobis adipisci.
-				Numquam corrupti quia sapiente labore dolores unde repudiandae esse totam sequi molestiae possimus ex,
-				doloribus, suscipit beatae error natus rerum amet eligendi aperiam sint nesciunt odit! Possimus magni
-				repudiandae quis.
-				In, qui itaque reprehenderit magni a quam provident dolore accusantium, sunt pariatur possimus esse
-				laboriosam ab, illo fuga minima quod perferendis amet perspiciatis cupiditate natus. Sapiente alias in
-				unde reprehenderit.
-				Dignissimos magnam repudiandae totam dolore vero, exercitationem iure autem voluptatem est recusandae
-				maxime eligendi! Necessitatibus velit rerum esse praesentium! Accusantium commodi, unde repudiandae
-				voluptatum consequatur aperiam placeat cum animi ex? 
 
-				
-			</p>
-				<div class="carousel col-sm-12 col-xs-12 col-md-12 col-lg-12 mt-4 mb-2">
-					<img src="media/BUENOS/FIN/A.png" class=" placeSaver img-fluid">
-					<img src="media/BUENOS/FIN/A.png" class="rounded slide img-fluid active"> 
-					<img src="media/BUENOS/FIN/B.png" class="rounded slide img-fluid"> 
-					<img src="media/BUENOS/FIN/C.png" class="rounded slide img-fluid"> 
-					<img src="media/BUENOS/FIN/D.png" class="rounded slide img-fluid"> 
-					<img src="media/BUENOS/FIN/E.png" class="rounded slide img-fluid"> 
-					<img src="media/BUENOS/FIN/F.png" class="rounded slide img-fluid"> 
-				</div>
-					
-			</div>
-		</div>
-	</div>
+	<!--Beneficios-->
 	<div class="container my-3 scrolleable  col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row">
 			<div class="contenido col-12 bg-white" id="beneficios">
 				<h1>Beneficios del servicio de comedor</h1>
-				
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum obcaecati ad veniam earum, ex iste
-				saepe magni, nisi error deserunt voluptates! Voluptatum, optio eligendi! Possimus et placeat animi
-				commodi ipsa?
-				Odio ipsa facilis expedita aspernatur non iste officia at accusamus fugit tempora laboriosam optio
-				inventore consectetur dolore aliquam atque praesentium quam magni eaque, quod, dolorum adipisci nobis.
-				Ipsam, itaque nesciunt.
-				Iusto magni commodi animi consequuntur voluptate fugit non officiis cupiditate nostrum error quae
-				doloremque in quaerat molestiae, repellendus minus alias velit iste, dignissimos id, neque culpa.
-				Dignissimos quis asperiores reiciendis!
-				Eaque dolor perferendis omnis possimus quas, quod enim deleniti deserunt porro optio nisi blanditiis
-				nesciunt inventore a dolores sed fuga debitis eum veritatis minus eveniet ullam? Eum in optio inventore?
-				Nulla inventore sit obcaecati, delectus eius, aliquid deleniti aperiam similique, exercitationem dolorem
-				facere quis! Corrupti quia consequatur deserunt. Sunt temporibus fugit officia tempora et repudiandae
-				officiis aliquid architecto reprehenderit alias?
-				Fuga aliquam nesciunt doloremque quo necessitatibus rerum consequuntur qui nam dolorem quas ipsam
-				quaerat, deserunt earum repellendus obcaecati ad, voluptas natus dolore fugit nostrum magnam
-				consequatur? Culpa neque dolor expedita!
-				Iusto, commodi neque, praesentium itaque tenetur consequuntur sapiente voluptatibus fuga minus, corporis
-				dicta facilis repellat dolorem! Earum possimus incidunt maiores sunt, autem eos voluptate, veniam
-				doloribus consequatur nesciunt beatae. Enim.
-				Porro corporis aliquam hic culpa modi perferendis neque quasi. Accusamus nostrum deserunt dolores
-				consectetur autem repellat consequuntur sed a quo accusantium, sequi repellendus dolorum tempore
-				inventore fugit hic optio dolor!
-				Animi, perspiciatis, corrupti iste at porro natus rem sit corporis non, qui molestias numquam voluptates
-				voluptatem. Sit ullam, illo, recusandae similique, laborum commodi debitis itaque consequatur unde
-				consectetur explicabo praesentium!
-				Quaerat autem natus ipsum aliquid? Facere voluptate, illo officiis adipisci ipsa cum saepe inventore
-				itaque voluptates ab eligendi dicta recusandae, nisi, fugit est perferendis id. Recusandae itaque
-				consectetur eligendi quia!
-			
-			</p>
+				<p>
+					El alimento es la fuente de energía fundamental en los seres humanos, por lo que es normal
+					contemplar este ámbito en
+					una empresa, sin embargo, es común que se pasen por alto muchas de las grandes ventajas que este
+					servicio traerá a
+					tu empresa si es que decides implementarlo.
+				</p>
+
+				<p>
+					Existen muchas áreas en las que un comedor beneficiará a tu empresa de forma positiva, una de las
+					más importantes es en
+					la vida de tus equipos de trabajo. Pues es de vital necesidad que todos los miembros de equipo se
+					encuentren en el mejor
+					estado posible, no tanto por el hecho laboral, si no por el hecho humano, pues en muchas situaciones
+					el empleado no
+					contará con la disposición de realizar un alimento para el transcurso de su turno, o peor aún, puede
+					que el empleado
+					haya ido a realizar sus funciones sin siquiera haber desayunado, lo que puede afectar
+					considerablemente la salud del
+					empleado.
+				</p>
+				<p>
+					Por todo lo anterior a continuación se enlistarán un conjunto de aspectos en los que un comedor
+					podría beneficiar a tus equipos de trabajo:
+				</p>
+				<p>
+					<span class="fw-bold">1.- Los empleados ahorran dinero:</span> El hecho de que los empleados ahorren
+					dinero podría sonar como
+					algo irrelevante
+					para la empresa, sin embargo, uno de los mejores aspectos de establecer un comedor industrial, es el
+					hecho que, el
+					salario neto del empleado promedio se verá aumentado de forma indirecta, lo que claramente es algo
+					grandioso para
+					los equipos de trabajo.
+				</p>
+
+				<p>
+					<span class="fw-bold">2.- Opciones en sus horarios:</span> En la gran mayoría de trabajos informales
+					se suele acostumbrar el
+					dichoso “come cuando
+					sobre tiempo”, lo cual en mucho casos genera en el trabajador una sensación de abrumación y de
+					presión, lo cual de
+					forma indiscutible generará un descontento en el grupo de trabajo, lo que a corto o mediano plazo
+					podría generar una
+					gran baja en los trabajadores, por lo que tener un horario formalizado para que los grupos de
+					trabajadores puedan
+					darse un breve respiro y un cambio de baterías para volver realizar sus actividades generará un gran
+					impacto
+					positivo.
+				</p>
+
+				<p>
+					<span class="fw-bold">3.- Genera la convivencia entre los empleados:</span> Este es quizás el punto
+					más relevante a la hora de
+					establecer un
+					comedor en una empresa, el tener a un numeroso grupo de trabajadores que en lo único que se enfocan
+					es en sacar
+					adelante sus actividades puede llegar a ser tedioso y molesto para los miembros del equipo, por lo
+					que, dar un
+					pequeño momento de desfogue y convivencia es una gran actividad para realizar en la empresa,
+					recordemos que al final
+					del día estamos hablando de grandes equipos de trabajo, y para que un equipo funcione como es debido
+					es fundamental
+					mantener una buena comunicación entre los miembros, así como una sana relación, la cual se podría
+					formar en este
+					claro momento del día.
+				</p>
+
+				<p>
+					<span class="fw-bold">4.- Previene enfermedades:</span> Alimentarse es algo que indispensablemente
+					deberá pasar en la jornada
+					laboral del
+					trabajador, por lo que el trabajador deberá encontrar la forma de alimentarse, si la empresa no
+					brinda algún tipo de
+					ayuda para el trabajador, el trabajador terminará consiguiendo alimento de fuentes poco reguladas,
+					lo cual a la
+					larga puede generar daños en la salud de los miembros del equipo de trabajo. Si tenemos rigurosas y
+					estrictas reglas
+					de seguridad en nuestros procesos, ¿por qué entonces ignorar la seguridad de la alimentación de
+					nuestros
+					trabajadores?
+				</p>
+
+				<p>
+					También, tenemos que ser honestos, la realidad es que buscamos que los trabajadores sean lo mas
+					productivos posibles,
+					sin tener que llegar al punto de la sobrecarga de trabajo. Por lo que en realidad un comedor en
+					nuestra empresa tendrá
+					un grandísimo impacto positivo para los trabajadores, tanto como los que ya pertenecen a nuestros
+					equipos de trabajo,
+					como aquellos interesados en integrarse a los equipos de trabajo de nuestra empresa, por lo que a
+					continuación se
+					enlista un conjunto de aspectos en los que la empresa podría mejorar como organización si contrata
+					un servicio de
+					comedor:
+				</p>
+
+				<p>
+					<span class="fw-bold">1.- Es una gran prestación de la empresa:</span> en realidad es algo que
+					aporta mucho a la hora de buscar
+					trabajo, sobre
+					todo a la hora de buscar trabajo en el sector industrial, pues es de conocimiento público que las
+					jornadas laborales
+					en el sector industrial suele ser muy agobiante, con horarios bastantes definidos, por lo que son
+					bastante pocas las
+					personas que preparan alimentos para su jornada, y liberar esta carga de la vida de los trabajadores
+					suele ser un
+					gran decisivo a la hora de decidir a qué empresa aplicar. Por lo que el servicio del comedor
+					aumentaría de forma
+					directa la accesibilidad de la empresa.
+				</p>
+
+				<p>
+					<span class="fw-bold" id="distintos">2.- Aumento de la calidad de las tareas realizadas:</span> La
+					calidad del trabajo claramente será superior
+					dependiendo del
+					estado de los trabajadores, no hay nada peor que trabajar con el estómago vacío, y esto podría
+					afectar a las cadenas
+					de producción o incluso a la seguridad de los procesos, por lo que a continuación se enlistarán
+					algunas de las
+					ventajas de contratar el servicio específico de Comedores Industriales del Pacífico. Este contenido
+					se encontrará
+					en: “¿Qué nos hace diferentes?”
+				</p>
+
+
+
 			</div>
 		</div>
 	</div>
+
+	<!--Que nos hace Distintos-->
+	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
+		<div class="row">
+			<div class="contenido col-12 bg-white">
+				<h1>¿Qué nos hace distintos?</h1>
+				<p>
+					Es de público conocimiento que en el sector industrial existen muchas empresas que son capaces de
+					ofrecer este servicio, pero que es lo que nos diferencia de las demás empresas que son capaces de
+					ofertar este servicio.
+				</p>
+
+				<p>
+					Iniciaremos un poco con lo referente a los valores que nos entusiasmamos en seguir:
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Responsabilidad</h5>
+				<p>
+					Todos hemos tenido alguna vez un día pesado, y lo único que deseamos es darnos un pequeño descanso,
+					este
+					pequeño descanso suele ser a la hora de recibir alimentación, nosotros como empresa velamos por este
+					concepto, la hora del alimento debe de ser lo menos tediosa posible, por lo que nos esforzamos por
+					dar
+					siempre un servicio que sea capaz de cumplir con las expectativas del trabajador.
+				</p>
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center"> Empatía </h5>
+				<p>
+					Siguiendo un poco la línea de lo establecido con anterioridad, el trabajador no siempre tendrá un
+					humor muy positivo, podrá haber tenido un día pesado, y esto lo sabemos claramente, por lo que
+					centraremos nuestra energía en que el trabajador se sienta escuchado, pues la crítica debe de
+					siempre ser escuchada, en este caso nosotros como empresa nos centramos bastante en este aspecto.
+				</p>
+
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Respeto</h5>
+				<p>
+					Como empresa prestadora de servicios sabemos muy bien que la interacción entre trabajadores puede
+					llegar
+					a ser un tanto tediosa, por lo que siempre buscaremos que en todas las interacciones que tengamos
+					con
+					los trabajadores sea la más integra posible, para así podar paso a todos los valores mencionados
+					anteriormente puedan desarrollarse de forma ideal.
+				</p>
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Honestidad</h5>
+
+				<p>Siguiendo el punto del respeto, no hay falta de respeto más grande que intentar engañar al
+					trabajador, o
+					tratarlo por tonto, la honestidad es uno de los valores que más nos esforzamos en mostrar a la hora
+					de
+					trabajar.</p>
+				</p>
+
+				<p>
+				<p>Ya hablamos un poco acerca de que es lo que nos hace diferentes respecto a lo moral, ahora
+					hablaremos un poco de que es lo que nos hace diferente como empresa a la hora de hablar un poco de
+					actividades, hemos de mencionar que no profundizaremos mucho en este, por lógicos motivos.</p>
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Higiene de siguiente nivel</h5>
+				<p>
+					La higiene es algo que todas las empresas prestadoras de servicio mencionan, sin embargo, en muchos
+					casos estos procesos de higiene se realizan de forma informal, es decir sin ningún tipo de
+					protocolo,
+					nosotros como empresa hacemos que toda la limpieza se realice conforme a los protocolos de limpieza
+					más
+					altos relacionados con el manejo de alimentos, una de estas normas que nos centramos más en seguir
+					es la
+					norma mexicana 251, y los lineamientos de manejo de alimentos de la COFEPRIS.
+				</p>
+
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Gran Variedad de Alimentos</h5>
+				<p>Uno de las principales quejas que se tienen al respecto de los comedores industriales es la gran
+					repetición de alimentos, en algunos casos el abuso de ciertas proteínas como pollo o pescado, al
+					punto
+					que el paladar de los trabajadores se abruma de este sabor, y prefieren dejar de consumir este
+					servicio,
+					por lo que algo que nosotros logramos es el manejo de un menú muy variado, en algunos casos este
+					tipo de
+					menús pueden generar inconveniencias, por el manejo de por lo menos 3 platillos por ofrecer, pero
+					todas
+					estas inconveniencias son cosas que planeamos manejar con el único fin de que el trabajador pueda
+					tener
+					una gran experiencia agradable a la hora de alimentarse.</p>
+				</p>
+
+
+				<div class="carousel col-sm-12 col-xs-12 col-md-12 col-lg-12 mt-4 mb-2">
+					<img src="media/BUENOS/FIN/A.png" class=" placeSaver img-fluid">
+					<img src="media/BUENOS/FIN/A.png" class="rounded slide img-fluid active">
+					<img src="media/BUENOS/FIN/B.png" class="rounded slide img-fluid">
+					<img src="media/BUENOS/FIN/C.png" class="rounded slide img-fluid">
+					<img src="media/BUENOS/FIN/D.png" class="rounded slide img-fluid">
+					<img src="media/BUENOS/FIN/E.png" class="rounded slide img-fluid">
+					<img src="media/BUENOS/FIN/F.png" class="rounded slide img-fluid">
+				</div>
+
+				<p>
+				<h5 class="fw-bold text-center">Alimentación balanceada, ligera, nutritiva</h5>
+
+				<p>En nuestro equipo de trabajo manejamos profesionales de muy alto nivel, entre estos contamos con
+					Licenciados Especializados en Nutrición, esto nos garantiza que nuestros menús no manejen una
+					saturación
+					de grasas o sodios, que a la larga puedan generar malestares en los consumidores.</p>
+				<p>
+					Por motivos lógicos es imposible medir la porción que los distintos tipos de cuerpos pueden manejar,
+					por
+					lo siguiente se realiza un estándar, para poder así calcular de forma correcta el aporte nutrimental
+					que
+					el platillo tendrá.</p>
+
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Personal altamente capacitado</h5>
+				<p>Nosotros nos preocupamos mucho por nuestro personal, pues estos representan en prácticamente la
+					totalidad de la empresa, pues a final de cuenta, el personal es que refleja las acciones e
+					ideologías
+					que la empresa busca mostrar.</p>
+
+				<p id="contratenos">Nosotros nos enfocamos demasiado en ambas partes de nuestro personal, desde el sector de la cocina,
+					hasta el sector operativo, ambas partes cuentan con una altísima capacitación, con el fin de poder
+					proporcionar un servicio de la mayor calidad posible.</p>
+
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+	<!--Contrataciones-->
 	<div class="container my-3 scrolleable  col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8">
 		<div class="row">
 			<div class="contenido bg-white" id="Contrataciones">
 				<h1>Contrataciones</h1>
-				
-			<p>
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id cum ea incidunt tenetur quasi maiores
-				explicabo enim qui facilis! Libero deleniti alias incidunt commodi minus laborum molestiae, debitis
-				rerum. Sed!
-				Cumque, quod velit! Voluptates libero necessitatibus, eveniet iste ipsum numquam recusandae, id totam
-				vero harum quisquam. Maxime eligendi accusantium laudantium atque, nemo cum distinctio doloribus
-				repellendus! Aut culpa amet rerum.
-				Praesentium, vel natus sequi, reprehenderit eos illo est doloremque molestiae provident perferendis
-				quasi quisquam officia. Dolore quas officia, dicta, consectetur laborum expedita cumque similique ex, a
-				autem provident quibusdam fugiat.
-				Culpa iusto sit officiis vel at consectetur, repudiandae sunt, asperiores, velit numquam molestiae nihil
-				aut ad itaque quam error ullam minus maxime quo accusantium voluptatibus voluptas quos! Porro, corporis
-				hic.
-				Ut quas, ipsam corrupti a consequatur quis velit iste perferendis impedit in! Cumque ex officia harum
-				possimus at commodi adipisci id sapiente labore! Nulla dolor vel at possimus dicta tempore.
-				Unde omnis assumenda aut hic molestias, quia, ratione aperiam totam dolorem, repellat rem cum quam
-				reprehenderit mollitia obcaecati atque! Nisi vero aliquam nesciunt eum ipsam ducimus quo amet adipisci
-				quam.
-				Fugiat aliquid quasi eius perspiciatis consequuntur, unde maxime culpa eum exercitationem quidem harum
-				placeat totam, ex corrupti quam alias facilis quo, voluptatibus illo fuga quae. Iusto at facere
-				voluptates rem!
-				
-			</p>
+
+				<p>
+					Es claro que ambas partes del contrato velaran por una sana relación comercial, por lo que
+					consideramos que es muy importante que nosotros como empresa demos algunas recomendaciones para que
+					nuestra relación sea beneficiosa para ambas partes.
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Subsidios:</h5>
+				<p>En realidad, muchos trabajadores no necesariamente cargan dinero con ellos, al final de cuentas van a
+					realizar labores que usualmente no requieren de cargar dinero.</p>
+				<p>También es muy importante recalcar que esta es una de las formas más saludables de difundir el
+					servicio del comedor, es muy muy importante que el trabajador tenga la tranquilidad de ir y
+					aprovechar a tener una buena comida, y saber que no es necesario </p>
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Definición de grupo de trabajadores y Horarios: </h5>
+				<p>Es claro que todas las empresas tienen muchos y diversos grupos de trabajadores, y es lógico que una
+					gran cantidad de empleados no pueden consumir un alimento de forma simultánea, pues entonces la fila
+					sería demasiada larga, por lo que como empresa resulta demasiado favorable que se desarrolle un
+					horario, el cual defina cuales grupos de trabajo salen a “receso” y aun mas importante que esta
+					información se le brinde a la empresa prestadora de alimentos, para así poder preparar a nuestros
+					equipos de trabajo para poder dar abasto a la demanda de servicios.</p>
+				<p>Y también es muy importante que el horario este bien definido para que el trabajador no se sienta
+					agobiado a la hora de ingerir sus alimentos.</p>
+				</p>
+
+				<p>
+				<h5 class="fw-bold text-center">Información Previa:</h5>
+				<p>Si con anterioridad ya ha existido un servicio de alimentos es mucha importancia que se nos brinde
+					esta información, para poder así no cometer los mismos errores, es decir, en ámbitos de, “Alimentos
+					evitables”, horarios preferidos, críticas de anteriores servicios.</p>
+				<p>Con esta información nosotros adaptaremos nuestro servicio para poder mejorar, y ofrecer un servicio
+					de la mayor calidad posible.</p>
+				</p>
 			</div>
 		</div>
 	</div>
 
+	<!--Visitanos-->
 	<div class="container my-3 scrolleable col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8 ">
-		<div class="contenido row bg-white"> 
-				<h2>Ven a visitar nuestras instalaciones:</h2>
+		<div class="contenido row bg-white">
+			<h2>Ven a visitar nuestras instalaciones:</h2>
 
-				<div class="form-group mt-2">
-					<label for="inputEmpresa">Nombre de su Empresa:</label>
+			<div class="form-group mt-2">
+				<label for="inputEmpresa">Nombre de su Empresa:</label>
+				<p>
 					<input type="text" class="form-control" id="inputEmpresa"
-						placeholder="Ej. Industria Costurera Baja California" autocomplete="off">
-				</div>
-
-				<div class="form-group mt-2">
-					<label for="inputInteresado">Nombre del Interesado:</label>
-					<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez"
-						autocomplete="off">
-				</div>
-
-				<div class="form-group mt-2">
-					<label for="inputCorreo">Correo Eléctronico:</label>
-					<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com"
-						autocomplete="off">
-				</div>
-
-				<div class="form-group mt-2">
-					<label for="inputHora">Fecha de su Visita:</label>
-					<input type="date" class="form-control" id="inputFecha" autocomplete="off">
-				</div>
-
-				<div class="form-group mt-2">
-					<label for="inputHora">Hora de su Visita:</label>
-					<input type="time" class="form-control" id="inputHora" autocomplete="off">
-				</div> 
-
-				<div class="row justify-content-between mx-auto mt-4">
-					<input type="reset" class="btn btn-primary col-4 cancelar" style="margin-right: 10;" value="Borrar">  
-					<button class="btn btn-primary col-7 " value="Enviar" onclick="validarDatos()" autocomplete="off">Enviar</button>
-				</div>
+					placeholder="Ej. Industria Costurera Baja California" autocomplete="off"
+					onclick="limpiezaErrores(this.id)"	
+					>
 					
+				</p>
+				
+			</div>
+
+			<div class="form-group mt-2">
+				<label for="inputInteresado">Nombre del Interesado:</label>
+				<input type="text" class="form-control" id="inputInteresado" placeholder="Ej. Fernando Gómez"
+					autocomplete="off" onclick="limpiezaErrores(this.id)"	>
+			</div>
+
+			<div class="form-group mt-2">
+				<label for="inputCorreo">Correo Eléctronico:</label>
+				<input type="text" class="form-control" id="inputCorreo" placeholder="Ej. nombre@ejemplo.com"
+					autocomplete="off" onclick="limpiezaErrores(this.id)"	>
+			</div>
+
+			<div class="form-group mt-2">
+				<label for="inputHora">Fecha de su Visita:</label>
+				<input type="date" class="form-control" id="inputFecha" autocomplete="off" onclick="limpiezaErrores(this.id)"	>
+			</div>
+
+			<div class="form-group mt-2">
+				<label for="inputHora">Hora de su Visita:</label>
+				<input type="time" class="form-control" id="inputHora" autocomplete="off" onclick="limpiezaErrores(this.id)"	>
+			</div>
+
+			<div class="row justify-content-between mx-auto mt-4">
+				<button id="reset" onclick="limpiarDatos()" class="btn btn-primary col-4 cancelar" style="margin-right: 10;" >Borrar</button>
+				<button class="btn btn-primary col-7 " value="Enviar" onclick="validarDatos()"
+					autocomplete="off">Enviar</button>
+			</div>
+
 		</div>
 	</div>
 
@@ -494,8 +771,16 @@
 
 	</footer>
 
-
+	<!--Alerta Custom--> 
+		<div id="custom-alert" class="alert alert-custom">
+			<h2 id="alert-title" class="alert-title">test</h2>
+			
+			<p id="alert-message" class="alert-message"></p>
+			<button id="alert-close" class="alert-close">&times;</button>
+		</div> 
+	
 </body>
 
-<script  src="index.js"></script>
+<script src="index.js"></script>
+
 </html>
